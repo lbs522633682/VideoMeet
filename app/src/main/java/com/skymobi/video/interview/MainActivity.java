@@ -4,7 +4,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import com.skymobi.video.framework.base.BaseUIActivity;
+
+public class MainActivity extends BaseUIActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
