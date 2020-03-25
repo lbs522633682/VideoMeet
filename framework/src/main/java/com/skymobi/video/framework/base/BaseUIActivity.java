@@ -2,7 +2,7 @@ package com.skymobi.video.framework.base;
 
 import android.os.Bundle;
 
-import com.liuguilin.framework.utils.SystemUI;
+import com.skymobi.video.framework.utils.SystemUI;
 
 /**
  * FileName: BaseUIActivity
