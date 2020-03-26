@@ -1,5 +1,7 @@
 package com.skymobi.video.framework;
 
+import android.content.Context;
+
 /**
  * Author:boshuai.li
  * Time:2020/3/25   17:29
@@ -24,7 +26,7 @@ public class Framework {
     /**
      * 初始化各个SDK入口
      */
-    public void initFrameWork() {
+    public void initFramework(Context context) {
 
 
     }
