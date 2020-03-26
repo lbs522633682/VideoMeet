@@ -22,4 +22,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api rootProject.ext.dependencies["appcompat"]
+    api rootProject.ext.dependencies["immersionbar"]
+    api project(path: ':video')
 }

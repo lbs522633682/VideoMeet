@@ -1,3 +1,4 @@
 rootProject.name='VideoInterview'
 include ':app'
 include ':framework'
+include ':video'

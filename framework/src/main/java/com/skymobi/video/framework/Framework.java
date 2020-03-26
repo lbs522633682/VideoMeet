@@ -2,6 +2,9 @@ package com.skymobi.video.framework;
 
 import android.content.Context;
 
+import com.bytemelody.video.helper.ZGBaseHelper;
+import com.skymobi.video.framework.utils.ContextUtils;
+
 /**
  * Author:boshuai.li
  * Time:2020/3/25   17:29
@@ -27,7 +30,7 @@ public class Framework {
      * 初始化各个SDK入口
      */
     public void initFramework(Context context) {
-
-
+        ContextUtils.init(context);
+        ZGBaseHelper.sharedInstance().initZGBase(context);
     }
 }

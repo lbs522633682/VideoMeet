@@ -12,6 +12,9 @@ ext {
     // 配置dependencies下的属性
     dependencies = [
             "appcompat" : 'androidx.appcompat:appcompat:1.1.0',
+
+            "immersionbar" : 'com.gyf.immersionbar:immersionbar:3.0.0'
+
     ]
 
     //仓库

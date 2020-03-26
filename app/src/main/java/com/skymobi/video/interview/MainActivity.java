@@ -1,5 +1,6 @@
 package com.skymobi.video.interview;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +12,14 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.gyf.immersionbar.ImmersionBar;
+import com.skymobi.video.framework.utils.PLog;
+import com.skymobi.video.interview.activity.ZGMediaRecorderRecordUI;
 import com.skymobi.video.framework.base.BaseUIActivity;
 import com.skymobi.video.interview.fragment.MineFragment;
 import com.skymobi.video.interview.fragment.TestFragment;
+
+import java.util.List;
 
 /**
  * FileName: BaseActivity
@@ -43,11 +49,22 @@ public class MainActivity extends BaseUIActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImmersionBar.with(this)
+                //.barColor(R.color.colorPrimary) // 设置导航栏背景色
+                .statusBarDarkFont(true) // 设置导航栏字体为深色
+                .init();
+
         initView();
+
+        startActivity(new Intent(this, ZGMediaRecorderRecordUI.class));
     }
 
 
     private void initView() {
+
+        requestPermiss();
+
         mMainLayout = (FrameLayout) findViewById(R.id.mMainLayout);
         iv_test = (ImageView) findViewById(R.id.iv_test);
         tv_test = (TextView) findViewById(R.id.tv_test);
@@ -67,6 +84,25 @@ public class MainActivity extends BaseUIActivity implements View.OnClickListener
 
         //切换默认的选项卡
         checkMainTab(0);
+    }
+
+    /**
+     * 请求权限
+     */
+    private void requestPermiss() {
+        //危险权限
+        request(new OnPermissionsResult() {
+            @Override
+            public void OnSuccess() {
+                PLog.i("OnPermissionsResult OnSuccess");
+            }
+
+            @Override
+            public void OnFail(List<String> noPermissions) {
+                PLog.i("OnPermissionsResult OnFail");
+            }
+
+        });
     }
 
     private void checkMainTab(int tabIndex) {

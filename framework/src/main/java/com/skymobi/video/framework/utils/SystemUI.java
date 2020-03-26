@@ -18,7 +18,7 @@ public class SystemUI {
             activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
-            activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
+            //activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
 
             // activity.getSupportActionBar().hide();
         }
